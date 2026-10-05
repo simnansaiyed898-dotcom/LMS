@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Library Management System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h2>LibraSys</h2>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#books">Books</a>
+    <a href="#members">Members</a>
+    <a href="#circulation">Issue / Return</a>
+  </nav>
+</header>
+
+<main>
+<section id="home" class="hero">
+  <h1>Library Management System</h1>
+  <p>Manage books, members and issue/return records.</p>
+</section>
+
+<section id="stats" class="stats"></section>
+
+<section id="books" class="card">
+  <div class="row">
+    <h2>Book Catalog</h2>
+    <button onclick="openBookForm()">+ Add Book</button>
+  </div>
+  <input id="search" placeholder="Search by title, author or ISBN" oninput="loadBooks()">
+  <div id="bookList"></div>
+</section>
+
+<section id="bookForm" class="card hidden">
+  <h2 id="bookFormTitle">Add Book</h2>
+  <input type="hidden" id="bookId">
+  <input id="title" placeholder="Book Title">
+  <input id="author" placeholder="Author">
+  <input id="isbn" placeholder="ISBN">
+  <input id="category" placeholder="Category">
+  <input id="quantity" type="number" min="1" placeholder="Quantity">
+  <button onclick="saveBook()">Save</button>
+  <button class="secondary" onclick="closeBookForm()">Cancel</button>
+  <p id="bookMsg"></p>
+</section>
+
+<section id="members" class="card">
+  <h2>Register Member</h2>
+  <form id="memberForm">
+    <input id="memberName" placeholder="Member Name" required>
+    <input id="memberEmail" type="email" placeholder="Email" required>
+    <input id="memberPhone" pattern="[0-9]{10}" placeholder="10 digit Phone" required>
+    <button type="submit">Register Member</button>
+  </form>
+  <p id="memberMsg"></p>
+</section>
+
+<section id="circulation" class="card">
+  <h2>Issue Book</h2>
+  <select id="issueMember"></select>
+  <select id="issueBook"></select>
+  <button onclick="issueBook()">Issue Book</button>
+</section>
+
+<section class="card">
+  <h2>Issue / Return Records</h2>
+  <div id="issueList"></div>
+</section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

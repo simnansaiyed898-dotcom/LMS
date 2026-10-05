@@ -1,0 +1,27 @@
+*{box-sizing:border-box}
+body{font-family:Arial,sans-serif;margin:0;background:#f3f5f7;color:#20252b}
+header{background:#20252b;color:white;padding:16px 7%;display:flex;justify-content:space-between;align-items:center}
+header h2{margin:0}
+nav a{color:white;margin:0 8px;text-decoration:none}
+main{max-width:1050px;margin:auto;padding:12px 15px}
+.hero{text-align:center;background:white;padding:45px 15px;margin:18px 0;border-radius:10px}
+.card{background:white;padding:22px;margin:18px 0;border-radius:10px;box-shadow:0 1px 4px #ddd}
+.row{display:flex;justify-content:space-between;align-items:center}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.stat{background:white;padding:18px;border-radius:10px}
+.stat h2{margin:8px 0 0}
+input,select,button{padding:10px;margin:5px;border:1px solid #ccd3d9;border-radius:6px}
+button{background:#20252b;color:white;cursor:pointer}
+button.secondary{background:#e7ebee;color:#20252b}
+.book{border:1px solid #e0e4e8;padding:14px;margin:10px 0;border-radius:8px}
+.book .actions{float:right}
+.badge{display:inline-block;padding:4px 8px;border-radius:10px;background:#e8edf0}
+.issue{border:1px solid #ddd;padding:12px;margin:8px 0;border-radius:8px}
+.hidden{display:none}
+#bookMsg,#memberMsg{font-weight:bold}
+@media(max-width:700px){
+  header{display:block}
+  nav{margin-top:12px}
+  .stats{grid-template-columns:1fr 1fr}
+  .row{display:block}
+}
